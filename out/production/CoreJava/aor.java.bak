@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class aor 
+{
+    
+    public static void main(String[]args){
+		Scanner sc=new Scanner(System.in);
+		System.out.println("ENTER LENGTH OF RECTANGLE: ");
+		int length=sc.nextInt();
+		System.out.println("ENTER BREADTH OF RECTANGLE: ");
+		int breadth=sc.nextInt();
+
+		int Area_of_rectangle=length*breadth;
+
+		System.out.println("THE AREA OF RECTANGLE OF LENGHT "+length+" AND BREADTH "+breadth+" IS:"+Area_of_rectangle);
+    }
+
+}

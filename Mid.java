@@ -1,0 +1,15 @@
+
+import java.util.Scanner;
+class Mid
+{
+	public static void main(String[] args) 
+	{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter Three Values: ");
+	int a=sc.nextInt();
+	int b=sc.nextInt();
+	int c=sc.nextInt();
+	int mid=a<b&&b<c?b:(a>b&&b<c?c:(a<b&&b>c?a:(c>a&&c>b?a:c)));
+	System.out.println("MID IS "+mid);
+	}
+}
