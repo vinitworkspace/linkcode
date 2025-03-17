@@ -20,11 +20,14 @@ public class jackedArray {
             }
         }
         System.out.println("Values From Jacked Array: ");
-        for(int i=0;i<a.length;i++)
+//        for(int i=0;i<a.length;i++)
+//        {
+//            for(int j=0;j<a[i].length;j++)
+        for(int x[]:a)
         {
-            for(int j=0;j<a[i].length;j++)
+            for(int b:x)
             {
-                System.out.print(a[i][j]+" ");
+                System.out.print(b+" ");
             }
             System.out.println();
         }
