@@ -1,16 +1,14 @@
 import java.util.Scanner;
 public class Method {
     static Scanner sc=new Scanner(System.in);
-    static int row;
-    static int col;
+    static int row=sc.nextInt();
+    static int col=sc.nextInt();
     static int i,j,k;
-    public static void addition(){
-        System.out.println("Enter Number of rows and columns: ");
-        row=sc.nextInt();
-        col=sc.nextInt();
-        int a1[][]=new int[row][col];
-        int a2[][]=new int[row][col];
-        int result[][]=new int[row][col];
+    public static void input(int a[][])
+    {
+
+    }
+    public static void addition(int a1[][],int a2[][],int result[][]){
         System.out.println("Enter Your Elements For Matrix 1: ");
         for(i=0;i<row;i++)
         {
@@ -40,13 +38,7 @@ public class Method {
 
     }
 
-    public static void substraction(){
-        System.out.println("Enter Number of rows and columns: ");
-        row=sc.nextInt();
-        col=sc.nextInt();
-        int a1[][]=new int[row][col];
-        int a2[][]=new int[row][col];
-        int result[][]=new int[row][col];
+    public static void substraction(int a1[][],int a2[][],int result[][]){
         System.out.println("Enter Your Elements For Matrix 1: ");
         for(i=0;i<row;i++)
         {
@@ -74,31 +66,19 @@ public class Method {
             System.out.println();
         }
     }
-    public static void Multiplication() {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter Number of rows and columns for matrix 1: ");
-        int row=sc.nextInt();
-        int col=sc.nextInt();
-        int arr1[][]=new int[row][col];
-        int result[][]=new int[row][col];
-
+    public static void Multiplication(int a1[][],int a2[][],int result[][]) {
         for(int i=0;i<row;i++)
         {
             for(int j=0;j<col;j++)
             {
-                arr1[i][j]=sc.nextInt();
+                a1[i][j]=sc.nextInt();
             }
         }
-        System.out.println("Enter Number of rows and columns for matrix 2: ");
-        row=sc.nextInt();
-        col=sc.nextInt();
-        int arr2[][]=new int[row][col];
-
         for(int i=0;i<row;i++)
         {
             for(int j=0;j<col;j++)
             {
-                arr2[i][j]=sc.nextInt();
+                a2[i][j]=sc.nextInt();
             }
         }
         for(int i=0;i<row;i++)
@@ -107,7 +87,7 @@ public class Method {
             {
                 for(int k=0;k<row;k++)
                 {
-                    result[i][j]+=arr1[i][k]*arr2[k][j];
+                    result[i][j]+=a1[i][k]*a2[k][j];
 
                 }
                 System.out.print(result[i][j]+" ");
@@ -115,19 +95,15 @@ public class Method {
             System.out.println();
         }
     }
-    public static void Transpose()
+    public static void Transpose(int a1[][],int result[][])
     {
-        System.out.println("Enter Number of rows and columns : ");
-        int row = sc.nextInt();
-        int col = sc.nextInt();
-        int arr1[][] = new int[row][col];
-        int result[][]=new int[row][col];
+
 
         for (int i = 0; i < row; i++)
         {
             for (int j = 0; j < col; j++)
             {
-                arr1[i][j] = sc.nextInt();
+                a1[i][j] = sc.nextInt();
             }
         }
         System.out.println("Before Transpose: ");
@@ -135,7 +111,7 @@ public class Method {
         {
             for(int j=0;j<col;j++)
             {
-                System.out.print(arr1[i][j]+" ");
+                System.out.print(a1[i][j]+" ");
             }
             System.out.println();
         }
@@ -144,13 +120,17 @@ public class Method {
         {
             for(int j=0;j<col;j++)
             {
-                result[i][j]=arr1[j][i];
+                result[i][j]=a1[j][i];
                 System.out.print(result[i][j]+" ");
             }
             System.out.println();
         }
     }
     public static void main(String[]args){
+        System.out.println("Enter Number of rows and columns : ");
+        int a1[][] = new int[row][col];
+        int a2[][]=new int[row][col];
+        int result[][]=new int[row][col];
         int n;
         System.out.println("OPERATIONS : ");
         System.out.println("1.Addition\n2.Substraction\n3.Multiplication\n4.Transpose");
@@ -158,9 +138,9 @@ public class Method {
         n=sc.nextInt();
 
         switch(n){
-            case 1:addition();break;
-            case 2:substraction();break;
-            case 3:Multiplication();break;
+            case 1:addition(a1[][],a2[][],result[][]);break;
+            case 2:substraction(a1[][],a2[][],result[][]);break;
+            case 3:Multiplication(int a1[][],int a2[][],result[][]);break;
             case 4:Transpose();break;
         }
     }
